@@ -1,0 +1,43 @@
+.nav-tabs {
+  width: 100%;
+  margin: 0 0 var(--s);
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  > li {
+    margin-right: var(--s);
+    > span {
+      margin-right: 2px;
+      padding-bottom: calc(var(--s) / 2);
+      &:hover{
+        color: var(--c-main);
+        cursor: pointer
+      }
+    }
+    &.active {
+      > span,
+      > span:hover,
+      > span:focus {
+        color: var(--c-main);
+        font-weight: bold;
+        border-bottom: 2px solid;
+      }
+    }
+  }
+}
+
+.tab-content {
+  width: 100%;
+  > .tab-pane {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  > .active {
+    display: block;
+  }
+}
+
+

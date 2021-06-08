@@ -1,0 +1,67 @@
+section.section, .margin-section, .margin-section-mobile{
+  margin-top: 48px;
+}
+
+
+
+section.extended{
+  margin-left: calc(-1 * var(--cont-margin));
+  margin-right: calc(-1 * var(--cont-margin));
+  &:not(.full){
+    padding-left: var(--cont-margin);
+    padding-right: var(--cont-margin);
+  }
+}
+
+section.absolute{
+  position: relative;
+  .inner-container{
+    position: absolute;
+    left:  calc(var(--cont-margin) * -1);
+    top:0;
+    width: 100vw;
+    overflow: hidden;
+  }
+}
+
+section.left-extended .inner-container{
+  margin-left: calc(-1 * var(--cont-margin));
+  padding-left: var(--cont-margin)
+}
+
+section.right-mobile-extended .inner-container{
+  margin-right: calc(-1 * var(--cont-margin));
+  padding-right: var(--cont-margin)
+}
+
+section .left-mobile-extended{
+  margin-left: calc(-1 * var(--cont-margin));
+  padding-left: var(--cont-margin)
+}
+
+
+
+section.padding{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@include respond-above(md){
+  .margin-section-mobile{margin-top:0}
+  section.section, .margin-section{margin-top: 80px;}
+  section.right-mobile-extended .inner-container{
+    margin-right:0;
+    padding-right:0
+  }
+  section.padding{
+    padding-top: 80px;
+    padding-bottom: 80px; 
+  }
+  section .left-mobile-extended{
+    margin-left: 0;
+    padding-left: 0
+  }
+  div.right-extended{
+    margin-right: calc(-1 * var(--cont-margin));
+  }
+}

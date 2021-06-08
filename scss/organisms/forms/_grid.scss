@@ -1,0 +1,18 @@
+.form-container {
+  .form-group.grid-4{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    .col-l-1 {
+      grid-column:span 1 !important;
+    }
+    .col-l-2 {
+      grid-column:span 2 !important;
+    }
+    .col-l-3 {
+      grid-column:span 3 !important;
+    }
+    .col-l-4 {
+      grid-column:span 4 !important;
+    }
+  }
+}

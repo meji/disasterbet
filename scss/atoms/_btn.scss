@@ -1,0 +1,40 @@
+.btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 32px;
+  height: 59px;
+  color: #fff;
+  background: var(--c-grey-m-dark);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  border: none;
+  width: fit-content;
+  transition: var(--transition);
+  white-space: nowrap;
+  &.full, &.mobile-full{
+    display: flex;
+    width: 100%;
+  }
+  &:hover{
+    background: var(--c-main);
+  }
+  &[disabled], &:disabled{
+    background:var(--c-grey);
+  }
+  &.white{
+    background: #fff;
+    color: var(--c-grey-m-dark);
+    &:hover{
+      background: var(--c-grey-m-dark);
+      color: #fff;
+    }
+  }
+}
+
+@include respond-above(sm){
+  .btn.mobile-full{
+    width: fit-content;
+  }
+}

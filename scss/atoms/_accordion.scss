@@ -1,0 +1,69 @@
+.accordion,
+*.accordion {
+  cursor: pointer;
+  padding: var(--l);
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+   //outline: none;
+  transition: var(--transition);
+  position: relative;
+  background: var(--c-grey-l-light);
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  margin-top: calc(var(--s)/2);
+  .text {
+    justify-self: flex-start;
+    margin-right: auto;
+    font-weight: 700;
+  }
+
+  .time {
+    text-transform: none;
+    color: var(--c-grey);
+    white-space: nowrap;
+    margin-left: var(--m);
+  }
+  &.active .icon-chevron-down:before {
+    content: "\e812";
+  }
+  &:hover {
+    cursor: pointer;
+  }
+  margin-bottom: 2px;
+  .m-hidden{
+    display: none;
+  }
+}
+.panel {
+  padding: 0;
+  background-color: transparent;
+  height: 0;
+  overflow: hidden;
+  margin-top: -2px;
+  transition: var(--transition);
+  opacity:0;
+}
+.panel.active {
+  height: auto;
+  opacity: 1;
+}
+.accordion.active + .panel.active .text{
+  padding: var(--l);
+}
+
+
+@include respond-above(md){
+  .accordion, *.accordion{
+    .m-hidden{
+      display: inline;
+    }
+    i.icon-chevron-down{margin-left: var(--xxxl)}
+    i.icon-clock{margin-right: var(--s)}
+  }
+  .accordion.active + .panel.active .text{
+    padding: var(--l) var(--xxxl);
+  }
+}

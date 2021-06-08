@@ -1,0 +1,10 @@
+ul.clean{
+  list-style-type: none;
+  margin:0 0 32px;
+  padding:0;
+  li{
+    margin-bottom: var(--m);
+    padding: 0;
+  }
+}
+

@@ -1,0 +1,62 @@
+.form-item{
+  display: block;
+  margin-bottom: var(--l);
+  overflow: hidden;
+  .label{
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: var(--m);
+    color: var(--c-grey-m-dark);
+  }
+  &:focus-within, &.focus{
+    .label{
+      color: var(--c-main);
+      transition: var(--transition);
+    }
+    input:not([type="radiobutton"]):not([type="checkbox"]):not([type="submit"]), textarea, select{
+      border-bottom-color: var(--c-interactive-light);
+      transition: var(--transition);
+    }
+  }
+  input:not([type="radiobutton"]):not([type="checkbox"]):not([type="submit"]), textarea, select{
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
+    outline:none;
+    font-size: 0.875rem;
+    width: 100%;
+    border-bottom: 2px solid var(--c-grey-m-light);
+    padding-bottom: var(--s);
+    color: var(--c-grey-m-dark);
+    &::placeholder{
+      color:var(--c-grey-s-light);
+    }
+  }
+  select{
+    padding-right: var(--l);
+    background: url("img/chevron-down.svg") no-repeat right center;
+    background-size: 14px;
+    color: unset;
+    &:invalid{
+      color: var(--c-grey-s-light);
+    }
+    option{
+      color: var(--c-grey-m-dark);
+    }
+  }
+  textarea{
+    min-height: 64px;
+  }
+  input[type=radio]{
+    border-radius: 100%
+  }
+}
+
+
+
+
+
+
+
+

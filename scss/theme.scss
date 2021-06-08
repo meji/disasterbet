@@ -1,0 +1,42 @@
+
+:root {
+  //Variables
+
+  //gutters
+  --s: 8px;
+  --m: calc(var(--s)*2); //16
+  --l: calc(var(--s)*3); //24
+  --xl: calc(var(--s)*4); //32
+  --xxl: calc(var(--s)*5); //40
+  --xxxl: calc(var(--s)*6); //48
+  --xxxxl: calc(var(--s)*7); //56
+  --xxxxxl: calc(var(--s)*8); //64
+  --superxl: calc(var(--s)*10); //80
+
+  // fonts
+  --font-body: 'Open Sans', Helvetica, sans-serif;
+  --font-titles: "Oswald",  Helvetica, sans-serif;
+  --body-text-s: 14px;
+  --body-text-m: 16px;
+  --body-text-l: 18px;
+
+
+  //colores
+  --c-main:#FF8A00;
+  --on-c-main: #fff;
+  --c-grey: #797979;
+  --c-grey-m-dark: #363636;
+  --c-grey-s-dark: #4d4d4d;
+  --c-gray-m-light: #b5b5b5;
+  --c-grey-s-light: #e0e0e0;
+  --c-grey-l-light: #fbfbfb;
+  --c-overlay: #363636;
+  --c-red-light: #C43131;
+
+  //Transitions
+  --transition: 0.3s;
+
+}
+.focus{
+  box-shadow: var(--focus-shadow)
+}

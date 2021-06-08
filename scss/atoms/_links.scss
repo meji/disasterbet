@@ -1,0 +1,17 @@
+
+a, .link, .smooth, .shoot-link, .shoot-linkl-ext{
+  color: var(--c-main);
+  transition: var(--transition);
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.text-white {
+  a, .link, .smooth, .shoot-link, .shoot-linkl-ext{
+    color: #fff;
+    &:hover{
+      color: var(--c-main);
+    }
+  }
+}

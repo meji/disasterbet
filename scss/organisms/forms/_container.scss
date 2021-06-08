@@ -1,0 +1,49 @@
+.form-container {
+  margin-top: var(--xxxl);
+  &.inline {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .btn {
+      width: 100%
+    }
+  }
+
+  .form-item:last-child {
+    margin-bottom: 0;
+  }
+
+  &.squared {
+    input:not([type="radiobutton"]):not([type="checkbox"]):not([type="submit"]), textarea, select {
+      padding: var(--m);
+      background-color: #fff;
+      color: var(--c-grey-s-dark);
+      border: 1px solid var(--c-grey-m-light);
+      height: 59px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    select {
+      background-position: right 16px center;
+    }
+  }
+  &.grid-2 {
+    gap: 0;
+  }
+}
+
+@include respond-above(md){
+  .form-container.grid-2{
+    gap:var(--l);
+  }
+  .form-container.inline{
+    flex-direction: row;
+    width: auto;
+    > .form-item{
+      width: 174px;
+      margin-bottom: 0;
+    }
+  }
+}
