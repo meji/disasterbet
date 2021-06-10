@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&family=Playfair+Display:wght@700&display=swap');
 
 :root {
   //Variables
@@ -15,23 +16,23 @@
 
   // fonts
   --font-body: 'Open Sans', Helvetica, sans-serif;
-  --font-titles: "Oswald",  Helvetica, sans-serif;
+  --font-titles: "Playfair Display",  Helvetica, sans-serif;
   --body-text-s: 14px;
   --body-text-m: 16px;
   --body-text-l: 18px;
 
 
   //colores
-  --c-main:#FF8A00;
+  --c-main:#449241;;
   --on-c-main: #fff;
-  --c-grey: #797979;
-  --c-grey-m-dark: #363636;
-  --c-grey-s-dark: #4d4d4d;
-  --c-gray-m-light: #b5b5b5;
-  --c-grey-s-light: #e0e0e0;
-  --c-grey-l-light: #fbfbfb;
-  --c-overlay: #363636;
-  --c-red-light: #C43131;
+  --c-secondary: #F0D943;
+  --on-c-secondary: #000;
+  --c-main-light:#91CC87;
+  --c-grey-light: #BBBBBB;
+
+  //Borde header
+  --border-header: 1px solid rgba(255,255,255,0.3);
+
 
   //Transitions
   --transition: 0.3s;

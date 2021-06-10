@@ -1,0 +1,112 @@
+header#header{
+  display: flex;
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 90px;
+  background: transparent;
+  z-index: 100;
+  padding:0;
+  margin: 0;
+  font-weight:600;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border-header);
+  #logo{
+    padding: var(--m);
+    display: flex;
+    align-items: center;
+  }
+  a{
+    color: var(--c-grey-light);
+    &:hover{color: #fff;}
+  }
+  nav{
+    display: none;
+  }
+  &:after{
+    content:"";
+    width: 100%;
+    height: 140px;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.35) 50%,  rgba(0,0,0,0) 100%);
+  }
+  #menu-toggle{
+    width: 32px;
+    display: block;
+    margin: 0 var(--l);
+    &:after, &:before, div {
+      background-color: #fff;
+      content: "";
+      display: block;
+      height: 2px;
+      margin: 8px 0;
+      transition: all .2s ease-in-out;
+      border-radius: 1px;
+    }
+  }
+}
+
+#wrapper.open{
+  header#header{
+    #menu-toggle{
+      vertical-align: middle;
+      position: relative;
+      z-index: 2;
+      &:before{
+        transform: translateY(10px) rotate(135deg);
+      }
+      div{
+        transform: scale(0);
+      }
+      &:after{
+        transform: translateY(-10px) rotate(-135deg);;
+      }
+    }
+  }
+}
+
+@include respond-above(lg){
+  header#header{
+    height: 110px;
+    align-items: stretch;
+    justify-content: flex-start;
+    #logo{
+      padding: 0 var(--l);
+    }
+    nav{
+      display: flex;
+      flex: 1;
+      ul{
+        display: flex;
+        list-style: none;
+        align-items: center;
+        li{
+          padding: 0 var(--m);
+        }
+      }
+      .language-switcher{
+        margin-left: auto;
+        justify-self: flex-end;
+        padding: 0 var(--xl);
+        border-left: var(--border-header);
+        display: flex;
+        align-items: center;
+      }
+      .social{
+        padding: 0 var(--xl);
+        border-left: var(--border-header);
+        display: flex;
+        align-items: center;
+        li{
+          padding: 0 var(--m);
+        }
+      }
+    }
+    #menu-toggle{display: none;}
+  }
+}

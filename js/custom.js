@@ -95,24 +95,24 @@ const accordionSimple = () => {
 
 //Scroll Up para cabecera y animación profesores scroll up de cabecera y de curso
 let lastScrollTop = 0;
-window.addEventListener("scroll", function() {
-  let st = window.scrollY;
-  const wrapper = document.getElementById("wrapper");
-  //Scroll classes up and down
-  if (st > 88) {
-    if (st > lastScrollTop) {
-      wrapper.classList.remove("up");
-      wrapper.classList.add("down");
-    } else {
-      wrapper.classList.add("up");
-      wrapper.classList.remove("down");
-    }
-    lastScrollTop = st;
-  } else {
-    wrapper.classList.remove("up");
-    wrapper.classList.remove("down");
-  }
-});
+// window.addEventListener("scroll", function() {
+//   let st = window.scrollY;
+//   const wrapper = document.getElementById("wrapper");
+//   //Scroll classes up and down
+//   if (st > 88) {
+//     if (st > lastScrollTop) {
+//       wrapper.classList.remove("up");
+//       wrapper.classList.add("down");
+//     } else {
+//       wrapper.classList.add("up");
+//       wrapper.classList.remove("down");
+//     }
+//     lastScrollTop = st;
+//   } else {
+//     wrapper.classList.remove("up");
+//     wrapper.classList.remove("down");
+//   }
+// });
 
 /*smooth_scroll*/
 const smoothScrolls = () => {
@@ -163,32 +163,6 @@ const tabsFunctionality = () => {
   }
   for (i = 0; i < myTabs.length; i++) {
     myTabs[i].addEventListener("click", myTabClicks);
-  }
-};
-
-/*Filters*/
-const fold = () => {
-  const filterTitles = document.querySelectorAll(".filter-title");
-  const filterSwitch = document.getElementById("filter-switch");
-  const closeFilter = document.getElementById("close-filters");
-  if (filterTitles.length > 0) {
-    filterTitles.forEach(title => {
-      title.addEventListener("click", function(e) {
-        e.target.parentNode.classList.toggle("folded");
-      });
-    });
-  }
-  if (filterSwitch) {
-    filterSwitch.addEventListener("click", function(e) {
-      document
-        .getElementById("filter-global-container")
-        .classList.add("opened");
-    });
-    closeFilter.addEventListener("click", function(e) {
-      document
-        .getElementById("filter-global-container")
-        .classList.remove("opened");
-    });
   }
 };
 

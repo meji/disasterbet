@@ -1,16 +1,20 @@
-body,
-p,
-li {
+body{
   font-size: var(--body-text-m);
   font-family: var(--font-body);
-  color: var(--c-grey-s-dark);
   line-height: 1.7;
-  margin-bottom: var(--s);
-  margin-top: 0;
-  &.body-text-l {
-    font-size: var(--body-text-l);
+  p,
+  li {
+    margin-bottom: var(--s);
+    margin-top: 0;
+    color: var(--c-grey-light);
+    &.body-text-l {
+      font-size: var(--body-text-l);
+    }
   }
 }
+
+
+
 
 h1,
 h2,

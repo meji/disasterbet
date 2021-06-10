@@ -7,7 +7,7 @@ $grid-breakpoints: (
   xs: 375px,
   sm: 768px,
   md: 1024px,
-  lg: 1280px,
+  lg: 1140px,
   xl: 1440px,
 ) !default;
 
@@ -58,28 +58,36 @@ $grid-breakpoints: (
 /**/
 .container{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-column-gap: var(--m);
   margin:0 var(--m);
+  &.full{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @include respond-above(sm){
   .container{
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
     grid-column-gap: var(--l);
     margin:0 var(--xl);
   }
 }
 @include respond-above(md){
   .container{
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: var(--l);
     margin:0 var(--xxxxl);
+    &.small{
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.center{
+      text-align: center;
+    }
   }
 }
 @include respond-above(xl){
   .container{
-    grid-column-gap: var(--l);
     margin:0 var(--xxxxxl);
   }
 }

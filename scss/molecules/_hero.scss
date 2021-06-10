@@ -18,11 +18,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: linear-gradient(
-        90deg,
-        rgba(54, 54, 54, 0.8) -2.5%,
-        rgba(54, 54, 54, 0) 100%
-      );
+      background: rgba(0,0,0,0.6);
       width: 100%;
       z-index: 1;
       height: 100%;
@@ -30,48 +26,41 @@
   }
   .data-container {
     position: absolute;
-    top: 0;
+    top: 90px;
     left: 0;
     right: 0;
-    height: 100%;
+    height: calc(100% - 90px);
+    width: 100%;
+    text-align: center;
     z-index: 2;
     align-content: start;
     padding-top: 16px;
-  }
-  &.big{
-    height: 467px;
-  }
-  &.medium{
-    height: 270px;
-  }
-  &.small{
-    height: 200px;
-    .container{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top:0;
-      h1, .h1{
-        margin: 0;
-      }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 920px;
+    margin: 0 auto;
+    color: #fff;
+    h1{
+      margin-bottom: var(--s);
     }
   }
 }
 
-@include respond-above(sm) {
+@include respond-above(md) {
   .hero {
-    height: 474px;
-    &.medium{
-      height: 336px;
-    }
+    height: 600px;
   }
 }
-
 @include respond-above(lg) {
   .hero {
-    height: 474px;
     &.big{
-      height: 608px;
+      min-height: 100vh;
+    }
+    .data-container{
+      top: 110px;
+      height: calc(100% - 110px);
     }
   }
 }
