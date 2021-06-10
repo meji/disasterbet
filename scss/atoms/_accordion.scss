@@ -1,7 +1,7 @@
 .accordion,
 *.accordion {
   cursor: pointer;
-  padding: var(--l);
+  padding: var(--l) 0;
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -13,21 +13,15 @@
   background: var(--c-grey-l-light);
   box-sizing: border-box;
   font-family: var(--font-body);
+  border-bottom: 1px solid #fff;
   margin-top: calc(var(--s)/2);
   .text {
     justify-self: flex-start;
     margin-right: auto;
     font-weight: 700;
   }
-
-  .time {
-    text-transform: none;
-    color: var(--c-grey);
-    white-space: nowrap;
-    margin-left: var(--m);
-  }
-  &.active .icon-chevron-down:before {
-    content: "\e812";
+  &.active .fa-angle-down:before {
+    content: "\f106";
   }
   &:hover {
     cursor: pointer;
@@ -51,19 +45,22 @@
   opacity: 1;
 }
 .accordion.active + .panel.active .text{
-  padding: var(--l);
+  padding: var(--l) 0;
 }
 
 
 @include respond-above(md){
+  .accordion-container{
+    text-align: left;
+  }
   .accordion, *.accordion{
     .m-hidden{
       display: inline;
     }
     i.icon-chevron-down{margin-left: var(--xxxl)}
-    i.icon-clock{margin-right: var(--s)}
+    text-align: left;
   }
-  .accordion.active + .panel.active .text{
-    padding: var(--l) var(--xxxl);
-  }
+  //.accordion.active + .panel.active .text{
+  //  padding: var(--l) var(--xxxl);
+  //}
 }

@@ -23,9 +23,9 @@ const headerInteraction = () => {
     document.getElementById("menu-toggle").addEventListener("click", () => {
       document.getElementById("wrapper").classList.toggle("open");
     });
-    document.querySelector("#header .close").addEventListener("click", () => {
-      document.getElementById("wrapper").classList.toggle("open");
-    });
+    // document.querySelector("#header .close").addEventListener("click", () => {
+    //   document.getElementById("wrapper").classList.toggle("open");
+    // });
   }
 };
 
@@ -58,20 +58,22 @@ const accordion = () => {
     const acc = document.getElementsByClassName("accordion");
     let i;
     for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
+      acc[i].addEventListener("click", function(e) {
         document
           .querySelector(".accordion-container")
           .querySelectorAll(".accordion")
           .forEach(el => {
-            el.classList.remove("active");
-            el.nextElementSibling.classList.remove("active");
+            if (el !== e.currentTarget) {
+              el.classList.remove("active");
+              el.nextElementSibling.classList.remove("active");
+            }
           });
         this.classList.toggle("active");
         this.nextElementSibling.classList.toggle("active");
         const topDistance =
           window.pageYOffset + this.getBoundingClientRect().top;
         window.scroll({
-          top: topDistance - 128,
+          top: topDistance - 90,
           left: 0,
           behavior: "smooth"
         });
@@ -170,7 +172,7 @@ const tabsFunctionality = () => {
 docReady(
   headerInteraction(),
   // videoInteraction(),
-  // accordionSimple(),
+  accordion(),
   smoothScrolls()
   // tabsFunctionality(),
   // fold(),

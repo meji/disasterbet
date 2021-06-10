@@ -47,6 +47,42 @@ html {
   display: flex;
   flex-direction: column;
 }
+.container .col-1 {
+  grid-column: span 1;
+}
+.container .col-2 {
+  grid-column: span 2;
+}
+.container .col-3 {
+  grid-column: span 3;
+}
+.container .col-4 {
+  grid-column: span 4;
+}
+.container .col-5 {
+  grid-column: span 5;
+}
+.container .col-6 {
+  grid-column: span 6;
+}
+.container .col-7 {
+  grid-column: span 7;
+}
+.container .col-8 {
+  grid-column: span 8;
+}
+.container .col-9 {
+  grid-column: span 9;
+}
+.container .col-10 {
+  grid-column: span 10;
+}
+.container .col-11 {
+  grid-column: span 11;
+}
+.container .col-l-12 {
+  grid-column: span 12;
+}
 
 @media (min-width: 769px) {
   .container {
@@ -65,6 +101,42 @@ html {
   }
   .container.center {
     text-align: center;
+  }
+  .container .col-l-1 {
+    grid-column: span 1;
+  }
+  .container .col-l-2 {
+    grid-column: span 2;
+  }
+  .container .col-l-3 {
+    grid-column: span 3;
+  }
+  .container .col-l-4 {
+    grid-column: span 4;
+  }
+  .container .col-l-5 {
+    grid-column: span 5;
+  }
+  .container .col-l-6 {
+    grid-column: span 6;
+  }
+  .container .col-l-7 {
+    grid-column: span 7;
+  }
+  .container .col-l-8 {
+    grid-column: span 8;
+  }
+  .container .col-l-9 {
+    grid-column: span 9;
+  }
+  .container .col-l-10 {
+    grid-column: span 10;
+  }
+  .container .col-l-11 {
+    grid-column: span 11;
+  }
+  .container .col-l-12 {
+    grid-column: span 12;
   }
 }
 @media (min-width: 1441px) {
@@ -1157,7 +1229,7 @@ button.swiper-pagination-bullet {
 .accordion,
 *.accordion {
   cursor: pointer;
-  padding: var(--l);
+  padding: var(--l) 0;
   width: 100%;
   display: flex;
   justify-content: flex-end;
@@ -1168,6 +1240,7 @@ button.swiper-pagination-bullet {
   background: var(--c-grey-l-light);
   box-sizing: border-box;
   font-family: var(--font-body);
+  border-bottom: 1px solid #fff;
   margin-top: calc(var(--s)/2);
   margin-bottom: 2px;
 }
@@ -1177,16 +1250,9 @@ button.swiper-pagination-bullet {
   margin-right: auto;
   font-weight: 700;
 }
-.accordion .time,
-*.accordion .time {
-  text-transform: none;
-  color: var(--c-grey);
-  white-space: nowrap;
-  margin-left: var(--m);
-}
-.accordion.active .icon-chevron-down:before,
-*.accordion.active .icon-chevron-down:before {
-  content: "";
+.accordion.active .fa-angle-down:before,
+*.accordion.active .fa-angle-down:before {
+  content: "";
 }
 .accordion:hover,
 *.accordion:hover {
@@ -1213,22 +1279,22 @@ button.swiper-pagination-bullet {
 }
 
 .accordion.active + .panel.active .text {
-  padding: var(--l);
+  padding: var(--l) 0;
 }
 
 @media (min-width: 1025px) {
+  .accordion-container {
+    text-align: left;
+  }
+
+  .accordion, *.accordion {
+    text-align: left;
+  }
   .accordion .m-hidden, *.accordion .m-hidden {
     display: inline;
   }
   .accordion i.icon-chevron-down, *.accordion i.icon-chevron-down {
     margin-left: var(--xxxl);
-  }
-  .accordion i.icon-clock, *.accordion i.icon-clock {
-    margin-right: var(--s);
-  }
-
-  .accordion.active + .panel.active .text {
-    padding: var(--l) var(--xxxl);
   }
 }
 .btn {
@@ -1290,6 +1356,28 @@ button.swiper-pagination-bullet {
   background: var(--c-grey-l-light);
 }
 
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: var(--xl);
+}
+.counter strong {
+  color: var(--c-secondary);
+  font-size: 3rem;
+  font-weight: 900;
+  display: block;
+  line-height: 1;
+  margin: 0;
+}
+
+@media (min-width: 1025px) {
+  .counter {
+    margin-bottom: 0;
+  }
+}
 .image-mosaic {
   display: flex;
   align-items: center;
@@ -1731,7 +1819,7 @@ p.smaller {
   content: "";
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 61.94%);
+  background: rgba(0, 0, 0, 0.4);
   position: absolute;
   top: 0;
   left: 0;
@@ -1763,9 +1851,6 @@ p.smaller {
 }
 
 @media (min-width: 1025px) {
-  .with-bg .bg:before {
-    background: linear-gradient(87.17deg, rgba(0, 0, 0, 0.096) 12.04%, rgba(0, 0, 0, 0) 48.34%), linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 38.06%);
-  }
   .with-bg .container {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -2388,8 +2473,8 @@ section.padding {
   }
 
   section.padding {
-    padding-top: 160px;
-    padding-bottom: 160px;
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 

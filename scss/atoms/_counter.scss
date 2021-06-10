@@ -1,0 +1,19 @@
+.counter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin-bottom: var(--xl);
+  strong{
+    color: var(--c-secondary);
+    font-size: 3rem;
+    font-weight: 900;
+    display: block;
+    line-height: 1;
+    margin:0;
+  }
+}
+@include respond-above(md){
+  .counter{margin-bottom: 0;}
+}
