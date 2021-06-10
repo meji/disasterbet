@@ -1941,6 +1941,7 @@ footer#footer ul {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  list-style: none;
 }
 footer#footer ul li {
   margin: var(--m);

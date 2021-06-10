@@ -181,37 +181,20 @@ docReady(
 //Swiper
 if (typeof Swiper === "function") {
   window.addEventListener("load", () => {
-    const heroSlider = new Swiper(".swiper-container.hero-slider", {
-      slidesPerView: 1,
+    const porfolioSlider = new Swiper(".swiper-container.porfolio", {
+      slidesPerView: 3.2,
+      spaceBetween: 24,
       loop: true,
       speed: 1000,
       autoplay: {
         delay: 5000,
         disableOnInteraction: false
-      },
-      pagination: {
-        el: ".hero-slider-pagination",
-        type: "progressbar"
-      },
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true
-      }
-    });
-    const featuredSlider = new Swiper(".swiper-container.featured-slider", {
-      slidesPerView: 1.45,
-      loop: true,
-      speed: 1000,
-      spaceBetween: 16,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      navigation: {
-        nextEl: ".swiper-button-next-featured",
-        prevEl: ".swiper-button-prev-featured"
       },
       breakpoints: {
+        1024: {
+          slidesPerView: 2.2,
+          spaceBetween: 16
+        },
         600: {
           slidesPerView: 1.2,
           spaceBetween: 16
