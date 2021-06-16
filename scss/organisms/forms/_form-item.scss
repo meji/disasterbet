@@ -22,15 +22,15 @@
     appearance: none;
     -webkit-appearance: none;
     border-radius: 0;
-    border: none;
     outline:none;
     font-size: 0.875rem;
     width: 100%;
-    border-bottom: 2px solid var(--c-grey-m-light);
-    padding-bottom: var(--s);
-    color: var(--c-grey-m-dark);
+    border: 2px solid var(--c-grey-light);
+    color: #fff;
+    padding: var(--s);
+    background: transparent;
     &::placeholder{
-      color:var(--c-grey-s-light);
+      color:var(--c-grey-light);
     }
   }
   select{

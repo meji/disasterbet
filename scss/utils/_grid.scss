@@ -54,7 +54,9 @@ $grid-breakpoints: (
   }
 }
 
-
+.full-column{
+  grid-column: 1/-1;
+}
 /**/
 .container{
   display: grid;
@@ -63,6 +65,9 @@ $grid-breakpoints: (
   margin:0 var(--m);
   &.full{
     display: flex;
+    flex-direction: column;
+  }
+  &.column{
     flex-direction: column;
   }
   .col-1 {
@@ -98,7 +103,7 @@ $grid-breakpoints: (
   .col-11 {
     grid-column: span 11;
   }
-  .col-l-12 {
+  .col-12 {
     grid-column: span 12;
   }
 }
@@ -114,6 +119,11 @@ $grid-breakpoints: (
     margin:0 var(--xxxxl);
     &.small{
       max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.medium{
+      max-width: 1280px;
       margin-left: auto;
       margin-right: auto;
     }

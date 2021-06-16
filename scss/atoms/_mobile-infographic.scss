@@ -1,0 +1,16 @@
+.mobile-infographic{
+  img{
+    width: 300px;
+    margin: var(--xl) auto;
+  }
+  h3{
+    color: var(--c-secondary);
+  }
+}
+@include respond-above(md){
+  .mobile-infographic{
+    img{
+      margin-top: 0;
+    }
+  }
+}

@@ -82,40 +82,31 @@ const accordion = () => {
   }
 };
 
-const accordionSimple = () => {
-  if (document.getElementsByClassName("accordion")) {
-    const acc = document.getElementsByClassName("accordion");
-    let i;
-    for (i = 0; i < acc.length; i++) {
-      acc[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        this.nextElementSibling.classList.toggle("active");
-      });
+//Scroll Up para cabecera
+const fixedHeaderInteraction = () => {
+  let lastScrollTop = 0;
+  const headerHeight = document.getElementById("header").offsetHeight;
+  window.addEventListener("scroll", function() {
+    let st = window.scrollY;
+    const wrapper = document.getElementById("wrapper");
+    //Scroll classes up and down
+    if (st > headerHeight) {
+      wrapper.classList.add("fixed");
+      if (st > lastScrollTop) {
+        wrapper.classList.remove("up");
+        wrapper.classList.add("down");
+      } else {
+        wrapper.classList.add("up");
+        wrapper.classList.remove("down");
+      }
+      lastScrollTop = st;
+    } else {
+      wrapper.classList.remove("fixed");
+      wrapper.classList.remove("up");
+      wrapper.classList.remove("down");
     }
-  }
+  });
 };
-
-//Scroll Up para cabecera y animación profesores scroll up de cabecera y de curso
-let lastScrollTop = 0;
-// window.addEventListener("scroll", function() {
-//   let st = window.scrollY;
-//   const wrapper = document.getElementById("wrapper");
-//   //Scroll classes up and down
-//   if (st > 88) {
-//     if (st > lastScrollTop) {
-//       wrapper.classList.remove("up");
-//       wrapper.classList.add("down");
-//     } else {
-//       wrapper.classList.add("up");
-//       wrapper.classList.remove("down");
-//     }
-//     lastScrollTop = st;
-//   } else {
-//     wrapper.classList.remove("up");
-//     wrapper.classList.remove("down");
-//   }
-// });
-
 /*smooth_scroll*/
 const smoothScrolls = () => {
   const links = document.querySelectorAll(".smooth");
@@ -171,6 +162,7 @@ const tabsFunctionality = () => {
 //Iniciamos métodos en document ready.
 docReady(
   headerInteraction(),
+  fixedHeaderInteraction(),
   // videoInteraction(),
   accordion(),
   smoothScrolls()

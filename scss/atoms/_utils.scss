@@ -33,6 +33,10 @@
   text-align: center;
 }
 
+.mobile-left{
+  text-align: left;
+}
+
 .mt-l{margin-top: var(--l)}
 
 .pd-xl{padding: var(--xl)}
@@ -40,6 +44,9 @@
 
 @include respond-above(md) {
   .mobile-center{
+    text-align: initial;
+  }
+  .mobile-left{
     text-align: initial;
   }
   .sticky-container {

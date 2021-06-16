@@ -1,0 +1,51 @@
+.glosario{
+  .container{
+    column-gap: 0;
+    margin: 0 calc(var(--m)* -1);
+  }
+  .block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--xxxxxl);
+    background: var(--c-grey);
+    h3{
+      margin:0 0 var(--l);
+    }
+    p{margin-bottom: var(--xxl);}
+    &:nth-child(even){
+      background: var(--c-grey-dark);
+    }
+    &:nth-child(odd){
+      background: var(--c-grey);
+    }
+    &:nth-child(3){
+      background: var(--c-secondary);
+      *{
+        color: var(--c-grey);
+      }
+    }
+  }
+}
+@include respond-above(md){
+  .glosario {
+    .container{
+      margin: 0 auto;
+    }
+    .block{
+      &:nth-child(4){
+        background: var(--c-grey);
+      }
+      &:nth-child(2), &:nth-child(3), &:nth-child(6) {
+        background: var(--c-grey-dark);
+      }
+      &:nth-child(3){
+        background: var(--c-secondary);
+        *{
+          color: var(--c-grey);
+        }
+      }
+    }
+  }
+}

@@ -14,6 +14,9 @@
   --xxxxxl: calc(var(--s)*8); //64
   --superxl: calc(var(--s)*10); //80
 
+  //Radius
+  --rm: 6px;
+
   // fonts
   --font-body: 'Open Sans', Helvetica, sans-serif;
   --font-titles: "Playfair Display",  Helvetica, sans-serif;
@@ -28,6 +31,8 @@
   --c-secondary: #F0D943;
   --on-c-secondary: #000;
   --c-main-light:#91CC87;
+  --c-grey: #333333;
+  --c-grey-dark: #171717;
   --c-grey-light: #BBBBBB;
 
   //Borde header

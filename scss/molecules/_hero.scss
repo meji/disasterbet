@@ -46,6 +46,13 @@
       margin-bottom: var(--s);
     }
   }
+  &.big{
+    min-height: 100vh;
+    picture{
+      min-height: 100vh;
+      img{min-height: 100vh}
+    }
+  }
 }
 
 @include respond-above(md) {
